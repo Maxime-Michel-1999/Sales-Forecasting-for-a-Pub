@@ -40,7 +40,7 @@ So now we have a data table gathering only the product we choose.
 A majority of this product has been coming and leaving from the bar menu so their sales aren't usable one by one. Therefor we decided to group them into pertinent categories. But how to choose this categories ? Here are our first thought.
 
 
-High Degree Beers 
+\textbf{High Degree Beers} 
 \begin{itemize}
 \item Chimay Bleu
 \item Kwak
@@ -60,7 +60,7 @@ High Degree Beers
 \item Elephant Demi
 \end{itemize}
 
-Normal Degree Beers 
+\textbf{Normal Degree Beers} 
 \begin{itemize}
 \item Leffe
 \item Grimbergen
@@ -79,7 +79,7 @@ Normal Degree Beers
 \item Ambrée Demi
 \end{itemize}
 
-Not Beer
+\textbf{Not Beer}
 \begin{itemize}
 \item Smirnoff
 \item Pastis
@@ -95,7 +95,7 @@ Not Beer
 \item JagerBomb
 \end{itemize}
 
-Special Beers 
+\textbf{Special Beers}
 \begin{itemize}
 \item Desperados
 \item Cidre Demi
@@ -105,7 +105,7 @@ Special Beers
 \item Corona
 \end{itemize}
 
-Aromatized Beer
+\textbf{Aromatized Beer}
 \begin{itemize}
 \item Chimay Rouge
 \item Hoegaaden blance
@@ -127,8 +127,12 @@ Those are ideas of the categories, at every time at least one product of each ca
 
 We think that a Weekly prediction can be done, so we'll consider the sales week by week (Time series approach). If we have difficulties doing it we will consider doing it monthly but then the forecast would be much less usable. (Time series approach)
 
-We will also maybe consider a year index. Indeed promotion aren't all the sames therefor they don't consume the same quantities. Adding a bias for each promotion (which would be compute thanks to the first month of data ? september ?) could maybe increase the accuracy of our estimations.
+We will also maybe consider a year index. Indeed promotion aren't all the sames therefor they don't consume the same quantities. Adding a bias for each promotion (which would be compute thanks to the first month of data ? september ?) could maybe increase the accuracy of our estimations.\\
+When to start ? Beginning of 2011 or rentree 2011 ?
+
 \subsection{Sorting By week}
+
+For each week we will sum the sales for each categories. The weeks will be register by a index of week from 1 to 52, and a year. So 2 keys. 
 
 I don't think that I can sort the data by week by using SQL, so I'll do a python code that do that. The results will be a table with the sales for each category for each week.
 
@@ -148,8 +152,23 @@ In order to do our prediction we thing about using the following features :
 
 We think that those are the main influences on whether people buy more or less drinks in a bar.
 
+\subsection{Sales}
+
+The sales are first in a sql table, we openened it using MariaDb. Then we created new tables for each categories by using SQL queries. From those table we made CSV files, import them as dataFrame object in python. \\
+In each dataFrame we have : $Id | Timestamp | Price | customer_id | product_id$ , we actually only use the timestamp as the product are already in categories.
+
 
 \section{}
+
+\chapter{Python Code}
+
+\section{Data Manipulation}
+The data is stored in Données.\\
+
+\begin{itemize}
+\item textbf{CreateDataFrame} opens thee CSV files of the sales and made a dataFrame for each table. Then it collect the number of sales for each week. For each product it gives a array of the form : $Year | Week number  | Number of sales$
+\item
+\end{itemize}
 
 \chapter{Machine Learning Methods}
 
