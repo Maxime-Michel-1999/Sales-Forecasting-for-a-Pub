@@ -7,38 +7,63 @@ Sales = []
 
 #Creating Table with each week for the 10 last years
 
-
-
-
-
-#Normal Beers Object
-NormalBeer = pd.read_csv(r"..\Données\NormalBeer.csv", sep=";" ,header = 0, parse_dates = ["timestamp"])
-
-weekIndex = 0
-salesCounter = []
-salesCounterIndex = -1
-counter = 0
-for i in NormalBeer.index:
-    date = NormalBeer["timestamp"][i]
-    weekNo = date.isocalendar()[1]
-    if weekNo == weekIndex :
-        salesCounter[salesCounterIndex][2] += 1
+def ProductSales(df):
+    
+    weekIndex = 0
+    salesCounter = []
+    salesCounterIndex = -1
+    for i in df.index:
+        date = df["timestamp"][i]
+        weekNo = date.isocalendar()[1]
+        if weekNo == weekIndex :
+            salesCounter[salesCounterIndex][2] += 1
         
-    else :
-        salesCounterIndex += 1
-        weekIndex = weekNo
-        salesCounter.append([date.year,weekIndex,1])
+        else :
+            salesCounterIndex += 1
+            weekIndex = weekNo
+            salesCounter.append([date.year,weekIndex,1])
         
-    counter += 1
+        #salesCounter is now an object containing the year, the week number and the number of sales.
+        return salesCounter
 
-#salesCounter is now an object containing the year, the week number and the number of sales.
+def CreateDataFrame():
+    
+    
+    #Normal Beers Object
+    NormalBeer = pd.read_csv(r"..\Données\NormalBeer.csv", sep=";" ,header = 0, parse_dates = ["timestamp"])
+    NormalBeerSales = ProductSales(NormalBeer)
 
-#print(NormalBeer.loc[1][1])
+    
+    #HighBeer
+    HighBeer = pd.read_csv(r"..\Données\HighBeer.csv", sep=";" ,header = 0, parse_dates = ["timestamp"])
+    HighBeerSales = ProductSales(NHighBeer)
+
+    #NotBeer
+    NotBeer = pd.read_csv(r"..\Données\HighBeer.csv", sep=";" ,header = 0, parse_dates = ["timestamp"])
+    NotBeerSales = ProductSales(NotBeer)
+    
+    return [NormalBeerSales, HighBeerSales, NotBeerSales]
 
 
-
-
-
-date = NormalBeer.loc[1][1]
-print(date)
-print(date.isocalendar()[1])
+def CreateSalesData(SalesTables):
+    #The goal here is to create a data frame for every year with for each week the sales of each categories
+    
+    #Checking the number of number of year
+    years = []
+    for i in SalesTable[0]:
+        year = i[0]
+        if year not in years:
+            years.append(year)
+    print('yo mona')
+    
+    
+    #Now we create a data frame for every year 
+    for j in years :
+        
+        
+        
+    
+    
+    
+def TestTrainSeparator():
+    
