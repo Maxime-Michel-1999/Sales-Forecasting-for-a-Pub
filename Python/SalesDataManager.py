@@ -56,7 +56,7 @@ def ProductSales(df):
     
     
 
-def CreateDataFrame():
+def CreateSalesArray():
     
     
     #Normal Beers Object
@@ -118,7 +118,7 @@ def CreateSalesData(SalesTable):
         
 #This Function is the main one, it gather all the work and gives the sales dataframe !
 def CreateSalesFrame():      
-    SalesTable = CreateDataFrame()
+    SalesTable = CreateSalesArray()
     table = CreateSalesData(SalesTable)
     return table
     
