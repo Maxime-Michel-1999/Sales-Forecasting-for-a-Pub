@@ -1,6 +1,7 @@
 #This file is made to open and gather the data in python friendly object
 
 import pandas as pd
+import matplotlib.pyplot as plt
 #The sales array will gather all the sales for each category for each week
 
 
@@ -122,4 +123,12 @@ def CreateSalesFrame():
     table = CreateSalesData(SalesTable)
     return table
     
+def Plot():
     
+    year = int(input("Which Year : "))
+    table = CreateSalesFrame()[year]
+    ax = plt.gca()
+    table.plot(kind='line',x='Week Number',y='Normal Beer',ax=ax)
+    table.plot(kind='line',x='Week Number',y='High Degree Beer', color='red', ax=ax)
+    table.plot(kind='line',x='Week Number',y='Not Beer', color='green', ax=ax)
+    table.plot(kind='line',x='Week Number',y='Special Beer', color='black', ax=ax)

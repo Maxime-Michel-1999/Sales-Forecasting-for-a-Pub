@@ -208,9 +208,16 @@ This file gather the function necessary to create a data frame gathering all sal
 \item \textbf{CreateSalesFrame} : This function is the gathering of all this file, it returns the previously described data frame by using all the functions.
 \end{itemize}
 
-\subsection{Holidays}
+\subsection{Holidays and Exams}
 
-According to us, one of the most important parameter is the holidays. We will consider the number of weeks (or days ?) to the next holiday (and after ?).
+According to us, one of the most important parameter is the holidays. We will consider the number of weeks (or days ?) to the next holiday (and after ?). The data is gathered in a csv file with for every week if there was a holiday (indicated by a 1) or if there wasn't (indicated by a 0). Our goal is to treat this data in order to have for each week the distance to the next holiday with the convention that the holiday week has a distance of 0. 
+For the exam we are considering the option of pondering the distance to the next exam depending on the number of exams that occurs in a week. But how to do that ?
+
+\begin{itemize}
+\item openHandEData() : This function just opens the csv file and make it a Dataframe
+\item distanceToNextHoliday() : This function creates the counter for holidays and add it to the previously made dataframe
+\item distanceToNextExam() : This function creates the counter for holidays and add it to the previously made dataframe
+\end{itemize}
 
 
 
