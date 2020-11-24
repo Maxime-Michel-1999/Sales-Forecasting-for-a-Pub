@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  23 NOV 2020 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  24 NOV 2020 16:19
 entering extended mode
 **./BabarForecasting.tex
 (BabarForecasting.tex
@@ -84,41 +84,111 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@dimlist=\toks16
 
 (C:\Users\maxim\Desktop\Latex\Installation\tex/latex/geometry\geometry.cfg))
+(C:\Users\maxim\Desktop\Latex\Installation\tex/latex/tools\multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count179
+\mult@box=\box45
+\multicol@leftmargin=\dimen145
+\c@unbalance=\count180
+\c@collectmore=\count181
+\doublecol@number=\count182
+\multicoltolerance=\count183
+\multicolpretolerance=\count184
+\full@width=\dimen146
+\page@free=\dimen147
+\premulticols=\dimen148
+\postmulticols=\dimen149
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box46
+\last@line=\box47
+\maxbalancingoverflow=\dimen150
+\mult@rightbox=\box48
+\mult@grightbox=\box49
+\mult@gfirstbox=\box50
+\mult@firstbox=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\c@minrows=\count185
+\c@columnbadness=\count186
+\c@finalcolumnbadness=\count187
+\last@try=\dimen151
+\multicolovershoot=\dimen152
+\multicolundershoot=\dimen153
+\mult@nat@firstbox=\box89
+\colbreak@box=\box90
+\mc@col@check@num=\count188
+)
 (C:\Users\maxim\Desktop\Latex\Installation\tex/latex/l3backend\l3backend-pdfmod
 e.def
 File: l3backend-pdfmode.def 2020-06-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count179
-\l__pdf_internal_box=\box45
+\l__kernel_color_stack_int=\count189
+\l__pdf_internal_box=\box91
 ) (BabarForecasting.aux)
 \openout1 = `BabarForecasting.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 (C:\Users\maxim\Desktop\Latex\Installation\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count180
-\scratchdimen=\dimen145
-\scratchbox=\box46
-\nofMPsegments=\count181
-\nofMParguments=\count182
+\scratchcounter=\count190
+\scratchdimen=\dimen154
+\scratchbox=\box92
+\nofMPsegments=\count191
+\nofMParguments=\count192
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count183
-\MPscratchDim=\dimen146
-\MPnumerator=\count184
-\makeMPintoPDFobject=\count185
+\MPscratchCnt=\count193
+\MPscratchDim=\dimen155
+\MPnumerator=\count194
+\makeMPintoPDFobject=\count195
 \everyMPtoPDFconversion=\toks18
 )
 (C:\Users\maxim\Desktop\Latex\Installation\tex/latex/epstopdf-pkg\epstopdf-base
@@ -162,11 +232,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 11.
+(Font)              <12> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 11.
+(Font)              <8> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 11.
+(Font)              <6> on input line 16.
 
 LaTeX Warning: No \author given.
 
@@ -179,123 +249,122 @@ Chapter 1.
 ]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--28
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--28
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 30.
+(Font)              <7> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 30.
+(Font)              <5> on input line 38.
 
-Overfull \hbox (29.35858pt too wide) in paragraph at lines 29--31
+Overfull \hbox (29.35858pt too wide) in paragraph at lines 37--39
 []\OT1/cmr/m/n/10 CREATE TA-BLE Want-ed-Prod-ucts AS SE-LECT babar$[]$server$[]
 $purchase.* FROM babar$[]$server$[]$purchase
  []
 
 [2
 
-] [3] [4]
-Overfull \hbox (39.72523pt too wide) in paragraph at lines 131--136
+] [3]
+Overfull \hbox (39.72523pt too wide) in paragraph at lines 154--159
 []\OT1/cmr/m/n/10 CREATE TA-BLE `High$[]$Degree$[]$Beer` AS SE-LECT babar$[]$se
 rver$[]$purchase.* FROM babar$[]$server$[]$purchase
  []
 
 
-Overfull \hbox (5.7731pt too wide) in paragraph at lines 131--136
+Overfull \hbox (5.7731pt too wide) in paragraph at lines 154--159
 \OT1/cmr/m/n/10 JOIN babar$[]$server$[]$product ON babar$[]$server$[]$purchase.
 product$[]$id = babar$[]$server$[]$product.id WHERE
  []
 
 
-Overfull \hbox (39.72523pt too wide) in paragraph at lines 141--146
+Overfull \hbox (39.72523pt too wide) in paragraph at lines 164--169
 []\OT1/cmr/m/n/10 CREATE TA-BLE `High$[]$Degree$[]$Beer` AS SE-LECT babar$[]$se
 rver$[]$purchase.* FROM babar$[]$server$[]$purchase
  []
 
 
-Overfull \hbox (5.7731pt too wide) in paragraph at lines 141--146
+Overfull \hbox (5.7731pt too wide) in paragraph at lines 164--169
 \OT1/cmr/m/n/10 JOIN babar$[]$server$[]$product ON babar$[]$server$[]$purchase.
 product$[]$id = babar$[]$server$[]$product.id WHERE
  []
 
 
-Overfull \hbox (39.72523pt too wide) in paragraph at lines 151--155
+Overfull \hbox (39.72523pt too wide) in paragraph at lines 174--178
 []\OT1/cmr/m/n/10 CREATE TA-BLE `High$[]$Degree$[]$Beer` AS SE-LECT babar$[]$se
 rver$[]$purchase.* FROM babar$[]$server$[]$purchase
  []
 
 
-Overfull \hbox (5.7731pt too wide) in paragraph at lines 151--155
+Overfull \hbox (5.7731pt too wide) in paragraph at lines 174--178
 \OT1/cmr/m/n/10 JOIN babar$[]$server$[]$product ON babar$[]$server$[]$purchase.
 product$[]$id = babar$[]$server$[]$product.id WHERE
  []
 
-[5]
-<./image/FormatTable.png, id=26, 552.26324pt x 161.403pt>
+[4]
+<./image/FormatTable.png, id=23, 552.26324pt x 161.403pt>
 File: ./image/FormatTable.png Graphic file (type png)
 <use ./image/FormatTable.png>
-Package pdftex.def Info: ./image/FormatTable.png  used on input line 171.
-(pdftex.def)             Requested size: 552.26189pt x 161.4026pt.
+Package pdftex.def Info: ./image/FormatTable.png  used on input line 194.
+(pdftex.def)             Requested size: 441.81119pt x 129.12257pt.
 
-Overfull \hbox (133.64189pt too wide) in paragraph at lines 171--172
+Overfull \hbox (23.1912pt too wide) in paragraph at lines 194--195
 [][] 
  []
 
-[6 <./image/FormatTable.png>] [7]
+[5 <./image/FormatTable.png>] [6]
 Chapter 3.
+[7
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 [8
 
 ] [9]
-Chapter 4.
-[10
-
-]
 Chapter 5.
-[11
+[10
 
 ]
 Chapter 6.
 
-Overfull \hbox (21.57526pt too wide) in paragraph at lines 243--244
+Overfull \hbox (21.57526pt too wide) in paragraph at lines 274--275
 \OT1/cmr/m/n/10 https://towardsdatascience.com/sales-forecasting-from-time-seri
 es-to-deep-learning-5d115514bfac : Fore-
  []
 
-[12
+[11
 
 ] (BabarForecasting.aux) ) 
 Here is how much of TeX's memory you used:
- 2174 strings out of 480790
- 30921 string characters out of 2898700
- 282015 words of memory out of 3000000
- 18203 multiletter control sequences out of 15000+200000
+ 2295 strings out of 480790
+ 32815 string characters out of 2898700
+ 291764 words of memory out of 3000000
+ 18320 multiletter control sequences out of 15000+200000
  537841 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,37p,1631b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,6n,37p,1631b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\maxim\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\tcrm1000.pk><C:/Users/maxim/Desktop/Latex/Installation/font
 s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/maxim/Desktop/Latex/Installatio
 n/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/maxim/Desktop/Latex/Insta
 llation/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maxim/Desktop/Latex
-/Installation/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/maxim/Desktop/
-Latex/Installation/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/maxim/Des
-ktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/maxi
-m/Desktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users
-/maxim/Desktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on BabarForecasting.pdf (13 pages, 132476 bytes).
+/Installation/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/maxim/Desktop/
+Latex/Installation/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/maxim/Des
+ktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/maxi
+m/Desktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on BabarForecasting.pdf (12 pages, 123146 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
