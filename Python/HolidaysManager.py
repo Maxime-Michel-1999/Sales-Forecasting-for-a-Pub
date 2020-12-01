@@ -9,6 +9,7 @@ Created on Sun Nov 22 15:33:26 2020
 #Holiday and exam dates are gathered in a csv file which for each week indicates if there was a exam or a holiday.
 
 import pandas as pd
+import numpy as np
 
 def openHandEData():
     return pd.read_csv(r"..\Données\HandEFirstYear.csv", sep=";" ,header = 0)
@@ -40,40 +41,45 @@ def distanceToNextHoliday():
                 
     
     Holiday = Holiday + BetweenHolidayList            
-    Table['WeekCounter to Holiday'] = Holiday
-    return Table
+    return Holiday
 
 
 #This one probably need to be ponderated depending on the number of exams !
 def distanceToNextExam():
     Table = openHandEData() #Getting the data 
     Exams = [] #This is the column we will add to the data frame containing the distance to the next holiday for every week
-    BetweenExamList = []
 
     for i in Table.index:
-        
-            indicator = Table['Exams'][i]
-            
-            #Checking if we aren't in a holiday
-            if indicator == 0:
-                for l in range(1,len(BetweenExamList)): #The fisrt value correspond to the last holidays so we don't increment it
-                    BetweenExamList[l] += 1 #Incrementing the counters
+            coefficient = 0
+            ponderate = 3
+            for j in range(i+1,i+4): #the goal is two analyse the three following weeks
+                try :
+                    coefficient += (Table['Exams'][j])*ponderate
                     
-                BetweenExamList.append(1)
-            
+                except:
+                    coefficient += 0
+                        
+                ponderate -= 1
                 
-            else :
-                #if we are in a holiday then we reset the counter and apply the gotten values to the list
-                #Applying the values
-                Exams = Exams + BetweenExamList
-                                  
-                #resetting the list
-                BetweenExamList = [0]
-                
-    
-    Exams = Exams + BetweenExamList            
-    Table['WeekCounter to Exam'] = Exams
-    return Table
-            
+            #We now have a coefficient for each week indicating the coming exams !
 
+            
+            Exams.append(coefficient)    
+            
+    return Exams
+            
+def CreateHandE():
+    Holiday = distanceToNextHoliday()
+    Exam = distanceToNextExam()
+    print(len(Holiday))
+    print(len(Exam))
+    
+    data = {'Week to Holiday': Holiday,
+        'Exam Coefficient': Exam
+        }
+
+    
+    dataFrame = pd.DataFrame(data,columns=['Week to Holiday', 'Exam Coefficient'])
+    
+    return dataFrame
         

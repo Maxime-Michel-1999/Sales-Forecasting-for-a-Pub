@@ -207,9 +207,19 @@ We think that those are the main influences on whether people buy more or less d
 
 \subsection{Holidays}
 
+The holidays data is gather in a CSV file with 3 columns, Year, WeekNo and Holiday. If the week is a Holiday week then the holiday column contains a 1. If it's a work week then there is a 0. After thinking about it we decided to not only consider if the week is or isn't a holidays week but also count the number of week before the next holidays. Indeed we forsee that people tend to buy more in a Bar when a Holiday is near.
+So the data given to the machine learning model will be the counter to the next holiday.
+
 \subsection{Exams}
 
+The Exams data is also gathered in a CSV file with 3 columns, Year, WeekNo and Exam. If there is a Exam this week the Exam column contains a 1 and a 0 if not. As we did for the holidays what would interest us is a counter to the next exam. But in the case of exams we also want to transcript the possibility of several week of exams following each other. So our idea is to examine the 3 following weeks and ponderate them (the first is more impactfull than the third one, with coefficient 3,2,1). 
 
+
+! HOWEVER ! : We think about being more precise and adding a value '2' that will transcript the importance of some exams.
+
+
+
+\includegraphics[scale=0.7]{DataModel}
 \chapter{Model Selection}
 
 Now the core of our work is to choose the best method to predict from our data. Or goal is to look in the dataset for features such as trends, cyclical fluctuations, seasonality, and behavioral patterns.
@@ -230,6 +240,9 @@ Here are the algorithm that we read about and could be used to forecast sales :
 \section{Neural Network}
 
 
+
+
+See Regularization ? ML course 24 november.
 
 \chapter{Python Code}
 
@@ -256,18 +269,25 @@ For the exam we are considering the option of pondering the distance to the next
 \begin{itemize}
 \item openHandEData() : This function just opens the csv file and make it a Dataframe
 \item distanceToNextHoliday() : This function creates the counter for holidays and add it to the previously made dataframe
-\item distanceToNextExam() : This function creates the counter for holidays and add it to the previously made dataframe
+\item distanceToNextExam() : This function creates a coefficient for each week for exams (as presented before, ponderated) and add it to the previously made dataframe.
+\item CreateHandE(): DataFrame with holiday and exams.
 \end{itemize}
 
 
+\chapter{Finding the best Forecasting Method}
 
 
 
+\section{Comparing Models}
+
+
+
+\section{Comparing the importance of features}
 
 
 \chapter{Development Ideas}
 
-
+Adding a coefficient considering the promotion ! Every promotion doesn't drink the same, a coefficient should be schoolyear based.
 
 \chapter{Inspirations}
 
