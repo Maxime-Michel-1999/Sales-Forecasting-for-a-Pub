@@ -17,9 +17,24 @@
 
 \chapter{Goal}
 
+\section{Forecasting}
+
+
+
 \section{The Problem}
 
-\section{Our Solution}
+For a buisness to be optimized it seems necessary to have an idea about how much is going to be sold, it enable the buisness house to produce or gather the right quantities at the right time. Furthermore it enables to make arrangement in advance for material, equiment or labour.
+
+In a bar or restaurant it is very important to have an approximation of the futur sales as it allow the owner to order the right quantity of food and avoid any problem with waste or expiration (which can quickly become expensive for those kind of buisness). 
+
+\section{Our Solution : Forecasting}
+
+Any forecast can be termed as an indicator of what is likely to happen in a specified future time frame in a particular field. Therefore, the sales forecast indicates as to how much of a particular product is likely to be sold in a specified future period in a specified market at speci­fied price.
+
+Our solution is to offer a trustfull estimation of the futur sales for a bar. This would accompany the manager in his/her choices about orders and organisation. We would use multiple machine learning models to have the most precise forecast on a weekly scale, and this by only using a few information like the holiday or exam dates.
+
+Furthermore this forecast would help the management in determining as to how much revenue can be expected to be realised and what shall be the requirement of men, machine and money.
+
 
 \chapter{Data Management}
 
@@ -29,19 +44,9 @@ There are too many products to have a prediction for each one. So we decided to 
 
 \subsection{First Selection}
 
-The first step is to choose which product we are going to take account of. We choosed to focus our work on the drinks sales that had at least been sold ???. So we exclude any food or other kind of sales. 
+The first step is to choose which product we are going to take account of. We have chosen to focus our work on the drinks sales that had at least been sold ???. So we exclude any food or other kind of sales. 
 
-SQL Request too extract those product : \\
- \\
-
-CREATE TABLE WantedProducts AS
-    SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON product$\_$id = babar$\_$server$\_$product.id WHERE NAME = 'Leffe' OR NAME = 'Hoegaaden blanche' OR NAME = 'Desperados' OR NAME = 'Smirnoff' OR NAME = 'Pastis' OR NAME = 'Hard' OR NAME = 'Grimbergen' OR NAME = 'Chimay Rouge' OR NAME = 'Chimay Bleue' OR NAME = 'Kro Demi' OR NAME = 'Cidre Demi' OR NAME = 'Pelforth' OR NAME = 'Kwak' OR NAME = 'Kir' OR NAME = 'Kro Pinte' OR NAME = 'Cidre Pinte' OR NAME = 'Cocktail Hard' OR NAME = 'Chimay Blanche' OR NAME = 'Shot'  OR NAME = 'Blanche Demi' OR NAME = 'Blanche Pinte' OR NAME = 'Cidre Doux/Brut' OR NAME = 'Ambree demi' OR NAME = 'Ambree Pinte'  OR NAME = 'Delirium' OR NAME = 'Rouge Pinte' OR NAME = 'Sangria' OR NAME = 'Karmeliet Triple' OR NAME = 'Duvel' OR NAME = 'Granita Hard' OR NAME = 'Skoll' OR NAME = 'Rouge Demi' OR NAME = '$1664$ Blanche' OR NAME = 'Chimay bleue' OR NAME = 'Pecheresse' OR NAME ='Cuvee des Trolls'  OR NAME = 'Kriek' OR NAME = 'Elephant Pinte' OR NAME = 'Elephant Demi' OR NAME = 'Maredsous Triple' OR NAME = 'Hard Qualite' OR NAME = 'BrewDog Punk IPA' OR NAME = 'JagerBomb' OR NAME = 'Cubanisto' OR NAME = 'Chouffe Pinte' OR NAME = 'Chouffe Demi' OR NAME = 'Corona' OR NAME = 'Tigre Bock' OR NAME = 'Troll Pinte' OR NAME = 'Troll Demi' OR NAME = 'Triple Karmeliet Pinte' OR NAME = 'Triple Karmeliet Demi' OR NAME = 'Paix Dieu $33$cL' OR NAME = 'Grim Triple Demi' OR NAME = 'Grim Triple Pinte' OR NAME = 'Cherry chouffe' OR NAME = 'Delirium rouge pinte' OR NAME = 'bush ambree' OR NAME = 'San Miguel';
-		
-List of considered product :
-
-So now we have a data table gathering only the product we choose.
-
-\subsection{Other products that could be considered}
+So now we have a data table gathering only the product we have chosen to consider.
 
 \subsection{Regrouping them into categories}
 
@@ -91,7 +96,6 @@ A majority of this product has been coming and leaving from the bar menu so thei
 
 \end{multicols}
 
-\pagebreak
 
 \begin{multicols}{3}
 
@@ -147,36 +151,6 @@ Other idea : Aromatize beer and Special together
 Those are ideas of the categories, at every time at least one product of each category was being sold, assuring the continuity of sales in each categories. The goal is having sales that are homogene on a year scale.
 
 
-\subsection{SQL code for product gathering}
-
-DROP TABLE IF EXISTS `High$\_$Degree$\_$Beer`;
-
-CREATE TABLE `High$\_$Degree$\_$Beer` 
-	AS SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON babar$\_$server$\_$purchase.product$\_$id = babar$\_$server$\_$product.id WHERE
-	NAME = 'Chimay Bleue' OR NAME = 'Chimay Bleu' OR NAME = 'Kwak' OR NAME = 'Karmeliet Triple' OR NAME= 'Duvel' OR NAME = 'Maredsous Triple'
-	OR NAME = 'Chouffe Pinte' OR NAME = 'Chouffe Demi'  OR NAME = 'Triple Karmeliet Pinte' OR NAME = 'Triple Karmeliet Demi'  OR NAME = 'Grim Triple Pinte'
-	OR NAME = 'Grim Triple Demi' OR NAME = 'bush ambrée' OR NAME = 'Delirium' OR NAME = 'Elephant Pinte' OR NAME = 'Elephant Demi';
-
-
-
-DROP TABLE IF EXISTS `Normal$\_$Degree$\_$Beer`;
-
-CREATE TABLE `High$\_$Degree$\_$Beer` 
-	AS SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON babar$\_$server$\_$purchase.product$\_$id = babar$\_$server$\_$product.id WHERE
-	NAME = 'Leffe' OR NAME = 'Grimbergen' OR NAME = 'Kro Demi' OR NAME = 'Kro Pinte' OR NAME = 'Pelforth' OR NAME = 'Skoll' OR NAME = 'BrewDog Punk IPA' 
-	OR NAME = 'Tigre Bock' OR NAME = 'Troll Pinte' OR NAME = 'Troll Demi' OR NAME ='Cuvée des trolls' OR NAME = 'Paix Dieu 33cL' OR NAME = 'San Miguel'
-	OR NAME = 'Ambrée pinte' OR NAME = 'Ambrée demi';
-	
-	
-	
-DROP TABLE IF EXISTS `Not$\_$Beer`;
-
-CREATE TABLE `High$\_$Degree$\_$Beer` 
-	AS SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON babar$\_$server$\_$purchase.product$\_$id = babar$\_$server$\_$product.id WHERE
-	NAME = 'Smirnoff' OR NAME = 'Pastis' OR NAME = 'Hard' OR NAME = 'Kir' OR NAME = 'Cocktail Hard' OR NAME = 'Shot' OR NAME = 'Rouge Pinte' OR NAME = 'Rouge Demi' 
-	OR NAME = 'Sangria' OR NAME = 'Granita Hard' OR NAME = 'Hard Qualité' OR NAME  = 'JagerBomb';
-	
-
 \section{Time Scale}
 
 We think that a Weekly prediction can be done, so we'll consider the sales week by week (Time series approach). If we have difficulties doing it we will consider doing it monthly but then the forecast would be much less usable. (Time series approach)
@@ -193,12 +167,13 @@ I don't think that I can sort the data by week by using SQL, so I'll do a python
 
 \includegraphics[scale = 0.8]{FormatTable}
 
-\section{Other used Data}
+\section{Other Features}
 
 In order to do our prediction we thing about using the following features :
 \begin{itemize}
 \item Day before next holiday 
 \item Day before next exam
+\item Promotion Index
 \item Day after exam or holiday ?
 \item Day before next large event ?
 \end{itemize}
@@ -224,6 +199,8 @@ Adding a coefficient considering the promotion ! Every promotion doesn't drink t
 
 
 \includegraphics[scale=0.7]{DataModel}
+
+
 \chapter{Model Selection}
 
 Now the core of our work is to choose the best method to predict from our data. Or goal is to look in the dataset for features such as trends, cyclical fluctuations, seasonality, and behavioral patterns.
@@ -240,6 +217,7 @@ Here are the algorithm that we read about and could be used to forecast sales :
 
 
 \section{Random Forest}
+
 
 \section{Neural Network}
 
@@ -280,9 +258,13 @@ For the exam we are considering the option of pondering the distance to the next
 \subsection{Promotion}
 Another important feature is the school year !
 
+
+
 \chapter{Finding the best Forecasting Method}
 
+\section{Results}
 
+\section{Random Forest}
 
 \section{Comparing Models}
 
@@ -291,7 +273,7 @@ Another important feature is the school year !
 \section{Comparing the importance of features}
 
 
-\chapter{Development Ideas}
+\chapter{Next Step}
 
 Adding a coefficient considering the promotion ! Every promotion doesn't drink the same, a coefficient should be schoolyear based.
 
@@ -300,6 +282,13 @@ Adding a coefficient considering the promotion ! Every promotion doesn't drink t
 https://towardsdatascience.com/sales-forecasting-from-time-series-to-deep-learning-5d115514bfac : Forecasting principles and basis 
 
 https://medium.com/analytics-vidhya/walmart-sales-forecasting-d6bd537e4904 : Forecasting at Walmart 
+
+
+\chapter{Individual Repartition}
+
+\section{Maxime}
+
+\section{Mathieu}
 
 
 
