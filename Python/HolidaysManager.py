@@ -9,7 +9,6 @@ Created on Sun Nov 22 15:33:26 2020
 #Holiday and exam dates are gathered in a csv file which for each week indicates if there was a exam or a holiday.
 
 import pandas as pd
-import numpy as np
 
 def openHandEData():
     return pd.read_csv(r"..\Données\HandEFirstYear.csv", sep=";" ,header = 0)
@@ -69,6 +68,7 @@ def distanceToNextExam():
     return Exams
             
 def CreateHandE():
+    
     Holiday = distanceToNextHoliday()
     Exam = distanceToNextExam()
     print(len(Holiday))
@@ -83,3 +83,33 @@ def CreateHandE():
     
     return dataFrame
         
+
+def FeaturesData():
+    HandE = CreateHandE()
+    
+    #we had the week number and the promotion (which are features).
+    
+    CSV  = openHandEData()
+    week = []
+    promotion =[]
+    for i in CSV.index:
+        week.append(CSV['WeekNumber'][i])
+        promotion.append(CSV['Promotion'][i])
+    
+    HandE['WeekNumber'] = week
+    HandE['Promotion'] = promotion
+    return HandE
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

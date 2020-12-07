@@ -88,31 +88,33 @@ def CreateSalesData(SalesTable):
     
     years = []
     
-      
-    SalesbyYear = dict() #this will contain the dataframe for each year
         
     for i in SalesTable[0]:
         year = i[0]
         if year not in years:
             years.append(year)
     
-    
-    yearIndex = 0
+
+    WeekSales = []
+    yearIndex=0
     #Now we create a data frame for every year 
     for j in years :
         
-        WeekSales = []
+        
         for l in range(52):
             #Adding a row with each sales for each categories (3 for the moment)
             # !!!! Don't forget to change and add a column for added categories !!!
             try :
-                WeekSales.append([l +1,SalesTable[0][l + yearIndex*52][2],SalesTable[1][l + yearIndex*52][2],SalesTable[2][l + yearIndex*52][2],SalesTable[3][l + yearIndex*52][2]])
+                WeekSales.append([j,l +1,SalesTable[0][l + yearIndex*52][2],SalesTable[1][l + yearIndex*52][2],SalesTable[2][l + yearIndex*52][2],SalesTable[3][l + yearIndex*52][2]])
             except :
                 break
+        yearIndex +=1
         
-        SalesbyYear[j] = ( pd.DataFrame(WeekSales,columns=['Week Number','Normal Beer', 'High Degree Beer', 'Not Beer', 'Special Beer']))
-        yearIndex += 1
-    return(SalesbyYear)
+        
+        
+    Sales = pd.DataFrame(WeekSales,columns=['Year','Week Number','Normal Beer', 'High Degree Beer', 'Not Beer', 'Special Beer'])
+        
+    return(Sales)
             
         
         
