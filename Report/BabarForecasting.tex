@@ -10,9 +10,9 @@
 \graphicspath{ {./image/} }
 
 \title{Babar Forecasting}
-\date{2020} 
- 
-\begin{document} 
+\date{2020}
+
+\begin{document}
 \maketitle
 
 \chapter{Goal}
@@ -25,18 +25,18 @@
 
 \section{Selection and Gathering Sales Data}
 
-There are too many products to have a prediction for each one. So we decided to gather them into categories. We want to gather them into pertinent groups so that the forecast can really help the bar. 
+There are too many products to have a prediction for each one. So we decided to gather them into categories. We want to gather them into pertinent groups so that the forecast can really help the bar.
 
 \subsection{First Selection}
 
-The first step is to choose which product we are going to take account of. We choosed to focus our work on the drinks sales that had at least been sold ???. So we exclude any food or other kind of sales. 
+The first step is to choose which product we are going to take account of. We choosed to focus our work on the drinks sales that had at least been sold ???. So we exclude any food or other kind of sales.
 
 SQL Request too extract those product : \\
  \\
 
 CREATE TABLE WantedProducts AS
     SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON product$\_$id = babar$\_$server$\_$product.id WHERE NAME = 'Leffe' OR NAME = 'Hoegaaden blanche' OR NAME = 'Desperados' OR NAME = 'Smirnoff' OR NAME = 'Pastis' OR NAME = 'Hard' OR NAME = 'Grimbergen' OR NAME = 'Chimay Rouge' OR NAME = 'Chimay Bleue' OR NAME = 'Kro Demi' OR NAME = 'Cidre Demi' OR NAME = 'Pelforth' OR NAME = 'Kwak' OR NAME = 'Kir' OR NAME = 'Kro Pinte' OR NAME = 'Cidre Pinte' OR NAME = 'Cocktail Hard' OR NAME = 'Chimay Blanche' OR NAME = 'Shot'  OR NAME = 'Blanche Demi' OR NAME = 'Blanche Pinte' OR NAME = 'Cidre Doux/Brut' OR NAME = 'Ambree demi' OR NAME = 'Ambree Pinte'  OR NAME = 'Delirium' OR NAME = 'Rouge Pinte' OR NAME = 'Sangria' OR NAME = 'Karmeliet Triple' OR NAME = 'Duvel' OR NAME = 'Granita Hard' OR NAME = 'Skoll' OR NAME = 'Rouge Demi' OR NAME = '$1664$ Blanche' OR NAME = 'Chimay bleue' OR NAME = 'Pecheresse' OR NAME ='Cuvee des Trolls'  OR NAME = 'Kriek' OR NAME = 'Elephant Pinte' OR NAME = 'Elephant Demi' OR NAME = 'Maredsous Triple' OR NAME = 'Hard Qualite' OR NAME = 'BrewDog Punk IPA' OR NAME = 'JagerBomb' OR NAME = 'Cubanisto' OR NAME = 'Chouffe Pinte' OR NAME = 'Chouffe Demi' OR NAME = 'Corona' OR NAME = 'Tigre Bock' OR NAME = 'Troll Pinte' OR NAME = 'Troll Demi' OR NAME = 'Triple Karmeliet Pinte' OR NAME = 'Triple Karmeliet Demi' OR NAME = 'Paix Dieu $33$cL' OR NAME = 'Grim Triple Demi' OR NAME = 'Grim Triple Pinte' OR NAME = 'Cherry chouffe' OR NAME = 'Delirium rouge pinte' OR NAME = 'bush ambree' OR NAME = 'San Miguel';
-		
+
 List of considered product :
 
 So now we have a data table gathering only the product we choose.
@@ -48,11 +48,11 @@ So now we have a data table gathering only the product we choose.
 A majority of this product has been coming and leaving from the bar menu so their sales aren't usable one by one. Therefor we decided to group them into pertinent categories. But how to choose this categories ? Here are our first thought.
 
 \begin{multicols}{2}
-\textbf{High Degree Beers} 
+\textbf{High Degree Beers}
 \begin{itemize}
 \item Chimay Bleu
 \item Kwak
-\item Karmeliet Triple 
+\item Karmeliet Triple
 \item Duvel
 \item Chimay bleue
 \item Maredsous Triple
@@ -70,7 +70,7 @@ A majority of this product has been coming and leaving from the bar menu so thei
 
 \columnbreak
 
-\textbf{Normal Degree Beers} 
+\textbf{Normal Degree Beers}
 \begin{itemize}
 \item Leffe
 \item Grimbergen
@@ -103,7 +103,7 @@ A majority of this product has been coming and leaving from the bar menu so thei
 \item Kir
 \item Cocktail Hard
 \item Shot
-\item Rouge Pinte 
+\item Rouge Pinte
 \item Rouge Demi
 \item Sangria
 \item Granita Hard
@@ -151,7 +151,7 @@ Those are ideas of the categories, at every time at least one product of each ca
 
 DROP TABLE IF EXISTS `High$\_$Degree$\_$Beer`;
 
-CREATE TABLE `High$\_$Degree$\_$Beer` 
+CREATE TABLE `High$\_$Degree$\_$Beer`
 	AS SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON babar$\_$server$\_$purchase.product$\_$id = babar$\_$server$\_$product.id WHERE
 	NAME = 'Chimay Bleue' OR NAME = 'Chimay Bleu' OR NAME = 'Kwak' OR NAME = 'Karmeliet Triple' OR NAME= 'Duvel' OR NAME = 'Maredsous Triple'
 	OR NAME = 'Chouffe Pinte' OR NAME = 'Chouffe Demi'  OR NAME = 'Triple Karmeliet Pinte' OR NAME = 'Triple Karmeliet Demi'  OR NAME = 'Grim Triple Pinte'
@@ -161,21 +161,21 @@ CREATE TABLE `High$\_$Degree$\_$Beer`
 
 DROP TABLE IF EXISTS `Normal$\_$Degree$\_$Beer`;
 
-CREATE TABLE `High$\_$Degree$\_$Beer` 
+CREATE TABLE `High$\_$Degree$\_$Beer`
 	AS SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON babar$\_$server$\_$purchase.product$\_$id = babar$\_$server$\_$product.id WHERE
-	NAME = 'Leffe' OR NAME = 'Grimbergen' OR NAME = 'Kro Demi' OR NAME = 'Kro Pinte' OR NAME = 'Pelforth' OR NAME = 'Skoll' OR NAME = 'BrewDog Punk IPA' 
+	NAME = 'Leffe' OR NAME = 'Grimbergen' OR NAME = 'Kro Demi' OR NAME = 'Kro Pinte' OR NAME = 'Pelforth' OR NAME = 'Skoll' OR NAME = 'BrewDog Punk IPA'
 	OR NAME = 'Tigre Bock' OR NAME = 'Troll Pinte' OR NAME = 'Troll Demi' OR NAME ='Cuvée des trolls' OR NAME = 'Paix Dieu 33cL' OR NAME = 'San Miguel'
 	OR NAME = 'Ambrée pinte' OR NAME = 'Ambrée demi';
-	
-	
-	
+
+
+
 DROP TABLE IF EXISTS `Not$\_$Beer`;
 
-CREATE TABLE `High$\_$Degree$\_$Beer` 
+CREATE TABLE `High$\_$Degree$\_$Beer`
 	AS SELECT babar$\_$server$\_$purchase.* FROM babar$\_$server$\_$purchase JOIN babar$\_$server$\_$product ON babar$\_$server$\_$purchase.product$\_$id = babar$\_$server$\_$product.id WHERE
-	NAME = 'Smirnoff' OR NAME = 'Pastis' OR NAME = 'Hard' OR NAME = 'Kir' OR NAME = 'Cocktail Hard' OR NAME = 'Shot' OR NAME = 'Rouge Pinte' OR NAME = 'Rouge Demi' 
+	NAME = 'Smirnoff' OR NAME = 'Pastis' OR NAME = 'Hard' OR NAME = 'Kir' OR NAME = 'Cocktail Hard' OR NAME = 'Shot' OR NAME = 'Rouge Pinte' OR NAME = 'Rouge Demi'
 	OR NAME = 'Sangria' OR NAME = 'Granita Hard' OR NAME = 'Hard Qualité' OR NAME  = 'JagerBomb';
-	
+
 
 \section{Time Scale}
 
@@ -186,7 +186,7 @@ When to start ? Beginning of 2011 or rentree 2011 ?
 
 \subsection{Sorting By week}
 
-For each week we will sum the sales for each categories. The weeks will be register by a index of week from 1 to 52, and a year. So 2 keys. 
+For each week we will sum the sales for each categories. The weeks will be register by a index of week from 1 to 52, and a year. So 2 keys.
 
 I don't think that I can sort the data by week by using SQL, so I'll do a python code that do that. The results will be a table with the sales for each category for each week.
 
@@ -197,7 +197,7 @@ I don't think that I can sort the data by week by using SQL, so I'll do a python
 
 In order to do our prediction we thing about using the following features :
 \begin{itemize}
-\item Day before next holiday 
+\item Day before next holiday
 \item Day before next exam
 \item Day after exam or holiday ?
 \item Day before next large event ?
@@ -212,7 +212,7 @@ So the data given to the machine learning model will be the counter to the next 
 
 \subsection{Exams}
 
-The Exams data is also gathered in a CSV file with 3 columns, Year, WeekNo and Exam. If there is a Exam this week the Exam column contains a 1 and a 0 if not. As we did for the holidays what would interest us is a counter to the next exam. But in the case of exams we also want to transcript the possibility of several week of exams following each other. So our idea is to examine the 3 following weeks and ponderate them (the first is more impactfull than the third one, with coefficient 3,2,1). 
+The Exams data is also gathered in a CSV file with 3 columns, Year, WeekNo and Exam. If there is a Exam this week the Exam column contains a 1 and a 0 if not. As we did for the holidays what would interest us is a counter to the next exam. But in the case of exams we also want to transcript the possibility of several week of exams following each other. So our idea is to examine the 3 following weeks and ponderate them (the first is more impactfull than the third one, with coefficient 3,2,1).
 
 
 ! HOWEVER ! : We think about being more precise and adding a value '2' that will transcript the importance of some exams.
@@ -237,9 +237,14 @@ Here are the algorithm that we read about and could be used to forecast sales :
 \end{itemize}
 
 \section{KNN Regressor}
+The KNN algorithm uses ‘feature similarity’ to predict the values of any new data points. This means that the new point is assigned a value based on how closely it resembles the points in the training set.
 
 
 \section{Random Forest}
+The Decision Tree algorithm has a major disadvantage in that it causes over-fitting.
+This problem can be limited by implementing the Random Forest Regression in place of the Decision Tree Regression.
+Additionally, the Random Forest algorithm is also very fast and robust than other regression models.
+To summarize in short, The Random Forest Algorithm merges the output of multiple Decision Trees to generate the final output.
 
 \section{Neural Network}
 
@@ -267,7 +272,7 @@ This file gather the function necessary to create a data frame gathering all sal
 
 \subsection{Holidays and Exams}
 
-According to us, one of the most important parameter is the holidays. We will consider the number of weeks (or days ?) to the next holiday (and after ?). The data is gathered in a csv file with for every week if there was a holiday (indicated by a 1) or if there wasn't (indicated by a 0). Our goal is to treat this data in order to have for each week the distance to the next holiday with the convention that the holiday week has a distance of 0. 
+According to us, one of the most important parameter is the holidays. We will consider the number of weeks (or days ?) to the next holiday (and after ?). The data is gathered in a csv file with for every week if there was a holiday (indicated by a 1) or if there wasn't (indicated by a 0). Our goal is to treat this data in order to have for each week the distance to the next holiday with the convention that the holiday week has a distance of 0.
 For the exam we are considering the option of pondering the distance to the next exam depending on the number of exams that occurs in a week. But how to do that ?
 
 \begin{itemize}
@@ -297,9 +302,9 @@ Adding a coefficient considering the promotion ! Every promotion doesn't drink t
 
 \chapter{Inspirations}
 
-https://towardsdatascience.com/sales-forecasting-from-time-series-to-deep-learning-5d115514bfac : Forecasting principles and basis 
+https://towardsdatascience.com/sales-forecasting-from-time-series-to-deep-learning-5d115514bfac : Forecasting principles and basis
 
-https://medium.com/analytics-vidhya/walmart-sales-forecasting-d6bd537e4904 : Forecasting at Walmart 
+https://medium.com/analytics-vidhya/walmart-sales-forecasting-d6bd537e4904 : Forecasting at Walmart
 
 
 
