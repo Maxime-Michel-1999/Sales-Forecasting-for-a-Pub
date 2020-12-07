@@ -48,17 +48,15 @@ def GetData():
 
 def KNN_Regressor():
     X_train,X_test,y_train,y_test = GetData()
-    knn = KNeighborsRegressor(n_neighbors=20)
+    knn = KNeighborsRegressor(n_neighbors=5)
     knn.fit(X_train,y_train)
     y_pred = knn.predict(X_test)
-    accuracy = knn.score(X_test,y_test)
+    accuracy = round( knn.score(X_test,y_test),3)
     plt.scatter(y_test,y_pred)
-    plt.xlabel('Scatter For predicted Values')
-    
-    
-    plt.text(80, 10, 'Accuracy = $accuracy$')
-
-    plt.plot
+    plt.title('Scatter For predicted Values')
+    text = "Accuracy = {} ".format(accuracy)
+    plt.text(80, 10,text,fontsize='x-large')
+    plt.show()
     
     
     
@@ -70,5 +68,11 @@ def DecisionTree():
     DecisionTree.fit(X_train,y_train)
     y_pred = DecisionTree.predict(X_test)
     
-    accuracy = DecisionTree.score(X_test,y_test)
-    return accuracy
+    accuracy = round(DecisionTree.score(X_test,y_test),3)
+    
+
+    plt.scatter(y_test,y_pred)
+    plt.title('Scatter For predicted Values')
+    text = "Accuracy = {} ".format(accuracy)
+    plt.text(80, 10,text,fontsize='x-large')
+    plt.show()

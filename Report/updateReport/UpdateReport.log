@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  7 DEC 2020 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  7 DEC 2020 20:05
 entering extended mode
 **./UpdateReport.tex
 (UpdateReport.tex
@@ -154,42 +154,54 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box90
 \mc@col@check@num=\count188
 )
+(C:\Users\maxim\Desktop\Latex\Installation\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box91
+\beforetitleunit=\skip51
+\aftertitleunit=\skip52
+\ttl@plus=\dimen154
+\ttl@minus=\dimen155
+\ttl@toksa=\toks17
+\titlewidth=\dimen156
+\titlewidthlast=\dimen157
+\titlewidthfirst=\dimen158
+)
 (C:\Users\maxim\Desktop\Latex\Installation\tex/latex/l3backend\l3backend-pdfmod
 e.def
 File: l3backend-pdfmode.def 2020-06-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count189
-\l__pdf_internal_box=\box91
+\l__pdf_internal_box=\box92
 ) (UpdateReport.aux)
 \openout1 = `UpdateReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 (C:\Users\maxim\Desktop\Latex\Installation\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count190
-\scratchdimen=\dimen154
-\scratchbox=\box92
+\scratchdimen=\dimen159
+\scratchbox=\box93
 \nofMPsegments=\count191
 \nofMParguments=\count192
-\everyMPshowfont=\toks17
+\everyMPshowfont=\toks18
 \MPscratchCnt=\count193
-\MPscratchDim=\dimen155
+\MPscratchDim=\dimen160
 \MPnumerator=\count194
 \makeMPintoPDFobject=\count195
-\everyMPtoPDFconversion=\toks18
+\everyMPtoPDFconversion=\toks19
 )
 (C:\Users\maxim\Desktop\Latex\Installation\tex/latex/epstopdf-pkg\epstopdf-base
 .sty
@@ -205,15 +217,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
-* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
+* h-part:(L,W,R)=(27.74144pt, 542.025pt, 27.74144pt)
+* v-part:(T,H,B)=(48.93872pt, 722.7pt, 73.40813pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=433.62pt
-* \textheight=578.15999pt
-* \oddsidemargin=9.67395pt
-* \evensidemargin=9.67395pt
-* \topmargin=-2.51526pt
+* \textwidth=542.025pt
+* \textheight=722.7pt
+* \oddsidemargin=-44.52855pt
+* \evensidemargin=-44.52855pt
+* \topmargin=-60.33127pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -232,14 +244,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 16.
+(Font)              <12> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 16.
+(Font)              <8> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 16.
-
-LaTeX Warning: No \author given.
-
+(Font)              <6> on input line 21.
 [1
 
 {C:/Users/maxim/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
@@ -248,130 +257,72 @@ Chapter 1.
 
 ]
 Chapter 2.
-[2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
-[]\OT1/cmr/m/n/10 Grim Triple
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-[]\OT1/cmr/m/n/10 Grim Triple
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-[]\OT1/cmr/m/n/10 BrewDog Punk
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
-[]\OT1/cmr/m/n/10 Hoegaaden
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-[]\OT1/cmr/m/n/10 Delirium rouge
- []
-
-[3]
-<./image/FormatTable.png, id=20, 552.26324pt x 161.403pt>
+<./image/FormatTable.png, id=12, 552.26324pt x 161.403pt>
 File: ./image/FormatTable.png Graphic file (type png)
 <use ./image/FormatTable.png>
-Package pdftex.def Info: ./image/FormatTable.png  used on input line 165.
+Package pdftex.def Info: ./image/FormatTable.png  used on input line 78.
 (pdftex.def)             Requested size: 441.81119pt x 129.12257pt.
+[2
 
-Overfull \hbox (23.1912pt too wide) in paragraph at lines 165--166
-[][] 
- []
-
-[4 <./image/FormatTable.png>]
-<./image/DataModel.png, id=26, 675.12225pt x 87.9285pt>
+ <./image/FormatTable.png>]
+<./image/DataModel.png, id=19, 523.9575pt x 94.55325pt>
 File: ./image/DataModel.png Graphic file (type png)
 <use ./image/DataModel.png>
-Package pdftex.def Info: ./image/DataModel.png  used on input line 198.
-(pdftex.def)             Requested size: 472.58235pt x 61.54951pt.
-
-Overfull \hbox (53.96236pt too wide) in paragraph at lines 198--199
-[][] 
- []
-
-[5 <./image/DataModel.png>]
+Package pdftex.def Info: ./image/DataModel.png  used on input line 110.
+(pdftex.def)             Requested size: 366.76775pt x 66.18681pt.
+ [3 <./image/DataModel.png>]
 Chapter 3.
-[6
-
-]
-Chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 237.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 237.
-[7
-
-] [8]
-Chapter 5.
-<./image/KNN5Nei.png, id=43, 376.40625pt x 249.93375pt>
+<./image/KNN5Nei.png, id=24, 376.40625pt x 264.99pt>
 File: ./image/KNN5Nei.png Graphic file (type png)
 <use ./image/KNN5Nei.png>
-Package pdftex.def Info: ./image/KNN5Nei.png  used on input line 271.
-(pdftex.def)             Requested size: 138.76157pt x 92.13843pt.
-<./image/KNN10Nei.png, id=44, 376.40625pt x 248.93pt>
+Package pdftex.def Info: ./image/KNN5Nei.png  used on input line 139.
+(pdftex.def)             Requested size: 173.45197pt x 122.11118pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 141.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 141.
+<./image/KNN10Nei.png, id=25, 376.40625pt x 264.99pt>
 File: ./image/KNN10Nei.png Graphic file (type png)
 <use ./image/KNN10Nei.png>
-Package pdftex.def Info: ./image/KNN10Nei.png  used on input line 275.
-(pdftex.def)             Requested size: 138.76157pt x 91.76839pt.
-<./image/KNN20Nei.png, id=45, 376.40625pt x 248.93pt>
+Package pdftex.def Info: ./image/KNN10Nei.png  used on input line 143.
+(pdftex.def)             Requested size: 173.45197pt x 122.11118pt.
+<./image/KNN20Nei.png, id=26, 376.40625pt x 264.99pt>
 File: ./image/KNN20Nei.png Graphic file (type png)
 <use ./image/KNN20Nei.png>
-Package pdftex.def Info: ./image/KNN20Nei.png  used on input line 279.
-(pdftex.def)             Requested size: 138.76157pt x 91.76839pt.
-[9
+Package pdftex.def Info: ./image/KNN20Nei.png  used on input line 147.
+(pdftex.def)             Requested size: 173.45197pt x 122.11118pt.
+<./image/DecisionTree.png, id=27, 376.40625pt x 264.99pt>
+File: ./image/DecisionTree.png Graphic file (type png)
+<use ./image/DecisionTree.png>
+Package pdftex.def Info: ./image/DecisionTree.png  used on input line 155.
+(pdftex.def)             Requested size: 188.20265pt x 132.49467pt.
+[4
 
- <./image/KNN5Nei.png> <./image/KNN10Nei.png> <./image/KNN20Nei.png>]
-Chapter 6.
-[10
-
-]
-Chapter 7.
-
-Overfull \hbox (21.57526pt too wide) in paragraph at lines 302--303
+ <./image/KNN5Nei.png> <./image/KNN10Nei.png> <./image/KNN20Nei.png> <./image/D
+ecisionTree.png>]
+Overfull \hbox (2.75377pt too wide) in paragraph at lines 188--189
 \OT1/cmr/m/n/10 https://towardsdatascience.com/sales-forecasting-from-time-seri
-es-to-deep-learning-5d115514bfac : Fore-
+es-to-deep-learning-5d115514bfac : Fore-cast-ing prin-ci-ples and
  []
 
-[11
-
-]
-Chapter 8.
-[12
-
-] (UpdateReport.aux) ) 
+[5] (UpdateReport.aux) ) 
 Here is how much of TeX's memory you used:
- 2322 strings out of 480790
- 33351 string characters out of 2898700
- 298786 words of memory out of 3000000
- 18344 multiletter control sequences out of 15000+200000
- 537841 words of font info for 42 fonts, out of 3000000 for 9000
+ 2612 strings out of 480790
+ 37147 string characters out of 2898700
+ 290746 words of memory out of 3000000
+ 18631 multiletter control sequences out of 15000+200000
+ 537533 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,8n,37p,519b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\maxim\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
-appen/ec/dpi600\tcrm1000.pk><C:/Users/maxim/Desktop/Latex/Installation/fonts/ty
-pe1/public/amsfonts/cm/cmbx10.pfb><C:/Users/maxim/Desktop/Latex/Installation/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/maxim/Desktop/Latex/Installat
-ion/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maxim/Desktop/Latex/Ins
-tallation/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/maxim/Desktop/Late
-x/Installation/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/maxim/Desktop
-/Latex/Installation/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/maxim/De
-sktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on UpdateReport.pdf (13 pages, 147322 bytes).
+ 30i,8n,37p,580b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\maxim\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\tcrm1000.pk><C:/Users/maxim/Desktop/Latex/Installation/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/maxim/Desktop/Latex/Installation/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/maxim/Desktop/Latex/Installa
+tion/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/maxim/Desktop/Latex/Ins
+tallation/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on UpdateReport.pdf (6 pages, 129596 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
