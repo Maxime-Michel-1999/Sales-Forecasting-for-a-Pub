@@ -71,8 +71,6 @@ def CreateHandE():
     
     Holiday = distanceToNextHoliday()
     Exam = distanceToNextExam()
-    print(len(Holiday))
-    print(len(Exam))
     
     data = {'Week to Holiday': Holiday,
         'Exam Coefficient': Exam

@@ -8,7 +8,7 @@ Created on Mon Dec  7 10:36:35 2020
 import HolidaysManager as FM
 import DataManager as DM
 import numpy as np 
-
+import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler
 from sklearn import model_selection as ms
@@ -24,7 +24,7 @@ def GetData():
     y = y.drop(columns=['Year','Week Number'])
     y = y.drop([304,305,306,307,308,309,310,311])
     
-    return X, y
+    
     
     #We create training and testing data that fit with sklearn package
 
@@ -35,16 +35,23 @@ def GetData():
     sc_X = StandardScaler()
     X_train = sc_X.fit_transform(X_train)
     X_test = sc_X.transform(X_test)
+    
+    return  X_train,X_test,y_train,y_test
 
     #return [X_train,X_test,y_train,y_test]
     #Now We can try our models !
 
 def KNN_Regressor():
-    Data = GetData()
-    X_train = Data[0]
-    y_train = Data[2]
-    X_test = Data[1]
-    knn = KNeighborsRegressor(n_neighbors=10,n_jobs=4)
+    X_train,X_test,y_train,y_test = GetData()
+    knn = KNeighborsRegressor(n_neighbors=20)
     knn.fit(X_train,y_train)
     y_pred = knn.predict(X_test)
-    return y_pred
+    plt.scatter(y_test,y_pred)
+    plt.plot
+    
+    
+    accuracy = knn.score(X_test,y_test)
+    return accuracy
+
+def DecisionTree():
+    

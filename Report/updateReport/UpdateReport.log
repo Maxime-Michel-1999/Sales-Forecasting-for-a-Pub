@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  7 DEC 2020 14:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  7 DEC 2020 14:49
 entering extended mode
 **./UpdateReport.tex
 (UpdateReport.tex
@@ -279,10 +279,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--142
 <./image/FormatTable.png, id=20, 552.26324pt x 161.403pt>
 File: ./image/FormatTable.png Graphic file (type png)
 <use ./image/FormatTable.png>
-Package pdftex.def Info: ./image/FormatTable.png  used on input line 166.
+Package pdftex.def Info: ./image/FormatTable.png  used on input line 165.
 (pdftex.def)             Requested size: 441.81119pt x 129.12257pt.
 
-Overfull \hbox (23.1912pt too wide) in paragraph at lines 166--167
+Overfull \hbox (23.1912pt too wide) in paragraph at lines 165--166
 [][] 
  []
 
@@ -290,10 +290,10 @@ Overfull \hbox (23.1912pt too wide) in paragraph at lines 166--167
 <./image/DataModel.png, id=26, 675.12225pt x 87.9285pt>
 File: ./image/DataModel.png Graphic file (type png)
 <use ./image/DataModel.png>
-Package pdftex.def Info: ./image/DataModel.png  used on input line 199.
+Package pdftex.def Info: ./image/DataModel.png  used on input line 198.
 (pdftex.def)             Requested size: 472.58235pt x 61.54951pt.
 
-Overfull \hbox (53.96236pt too wide) in paragraph at lines 199--200
+Overfull \hbox (53.96236pt too wide) in paragraph at lines 198--199
 [][] 
  []
 
@@ -304,28 +304,43 @@ Chapter 3.
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 238.
+(Font)              <7> on input line 237.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 238.
+(Font)              <5> on input line 237.
 [7
 
 ] [8]
 Chapter 5.
+<./image/KNN5Nei.png, id=43, 376.40625pt x 249.93375pt>
+File: ./image/KNN5Nei.png Graphic file (type png)
+<use ./image/KNN5Nei.png>
+Package pdftex.def Info: ./image/KNN5Nei.png  used on input line 271.
+(pdftex.def)             Requested size: 138.76157pt x 92.13843pt.
+<./image/KNN10Nei.png, id=44, 376.40625pt x 248.93pt>
+File: ./image/KNN10Nei.png Graphic file (type png)
+<use ./image/KNN10Nei.png>
+Package pdftex.def Info: ./image/KNN10Nei.png  used on input line 275.
+(pdftex.def)             Requested size: 138.76157pt x 91.76839pt.
+<./image/KNN20Nei.png, id=45, 376.40625pt x 248.93pt>
+File: ./image/KNN20Nei.png Graphic file (type png)
+<use ./image/KNN20Nei.png>
+Package pdftex.def Info: ./image/KNN20Nei.png  used on input line 279.
+(pdftex.def)             Requested size: 138.76157pt x 91.76839pt.
 [9
 
-]
+ <./image/KNN5Nei.png> <./image/KNN10Nei.png> <./image/KNN20Nei.png>]
 Chapter 6.
 [10
 
 ]
 Chapter 7.
 
-Overfull \hbox (21.57526pt too wide) in paragraph at lines 280--281
+Overfull \hbox (21.57526pt too wide) in paragraph at lines 302--303
 \OT1/cmr/m/n/10 https://towardsdatascience.com/sales-forecasting-from-time-seri
 es-to-deep-learning-5d115514bfac : Fore-
  []
@@ -338,13 +353,13 @@ Chapter 8.
 
 ] (UpdateReport.aux) ) 
 Here is how much of TeX's memory you used:
- 2301 strings out of 480790
- 32947 string characters out of 2898700
- 298756 words of memory out of 3000000
- 18326 multiletter control sequences out of 15000+200000
+ 2322 strings out of 480790
+ 33351 string characters out of 2898700
+ 298786 words of memory out of 3000000
+ 18344 multiletter control sequences out of 15000+200000
  537841 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,37p,519b,202s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,37p,519b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\maxim\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
 appen/ec/dpi600\tcrm1000.pk><C:/Users/maxim/Desktop/Latex/Installation/fonts/ty
 pe1/public/amsfonts/cm/cmbx10.pfb><C:/Users/maxim/Desktop/Latex/Installation/fo
@@ -354,9 +369,9 @@ tallation/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/maxim/Desktop/Late
 x/Installation/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/maxim/Desktop
 /Latex/Installation/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/maxim/De
 sktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on UpdateReport.pdf (13 pages, 130156 bytes).
+Output written on UpdateReport.pdf (13 pages, 147322 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
