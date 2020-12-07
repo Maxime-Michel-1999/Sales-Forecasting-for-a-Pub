@@ -12,8 +12,13 @@ import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler
 from sklearn import model_selection as ms
+
 from sklearn.metrics import mean_absolute_error
 from sklearn.neighbors import KNeighborsRegressor
+
+from sklearn.tree import DecisionTreeRegressor
+
+
 
 
 #Getting the data
@@ -46,12 +51,24 @@ def KNN_Regressor():
     knn = KNeighborsRegressor(n_neighbors=20)
     knn.fit(X_train,y_train)
     y_pred = knn.predict(X_test)
+    accuracy = knn.score(X_test,y_test)
     plt.scatter(y_test,y_pred)
+    plt.xlabel('Scatter For predicted Values')
+    
+    
+    plt.text(80, 10, 'Accuracy = $accuracy$')
+
     plt.plot
     
     
-    accuracy = knn.score(X_test,y_test)
+    
     return accuracy
 
 def DecisionTree():
+    X_train,X_test,y_train,y_test = GetData()
+    DecisionTree = DecisionTreeRegressor(random_state=0)
+    DecisionTree.fit(X_train,y_train)
+    y_pred = DecisionTree.predict(X_test)
     
+    accuracy = DecisionTree.score(X_test,y_test)
+    return accuracy
