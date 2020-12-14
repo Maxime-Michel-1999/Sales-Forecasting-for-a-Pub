@@ -18,6 +18,8 @@ from sklearn.neighbors import KNeighborsRegressor
 
 from sklearn.tree import DecisionTreeRegressor
 
+from sklearn.ensemble import RandomForestRegressor as RFR
+
 
 
 
@@ -25,9 +27,20 @@ from sklearn.tree import DecisionTreeRegressor
 def GetData():
     X = FM.FeaturesData()
     y = DM.CreateSalesFrame()
+    
+    
+    
+    for i in y.index :
+        
+        
+        if y['Week Number'][i] < 36 and y['Year'][i] ==  2012 :
+            y = y.drop([i])
+            
+        elif y['Week Number'][i] > 44 and y['Year'][i] == 2019 :
+            y = y.drop([i])
+            
    
     y = y.drop(columns=['Year','Week Number'])
-    y = y.drop([304,305,306,307,308,309,310,311])
     
     
     
@@ -48,14 +61,16 @@ def GetData():
 
 def KNN_Regressor():
     X_train,X_test,y_train,y_test = GetData()
-    knn = KNeighborsRegressor(n_neighbors=5)
+    knn = KNeighborsRegressor(n_neighbors=15,n_jobs=6)
     knn.fit(X_train,y_train)
     y_pred = knn.predict(X_test)
+
+    print(len(y_pred))
     accuracy = round( knn.score(X_test,y_test),3)
     plt.scatter(y_test,y_pred)
     plt.title('Scatter For predicted Values')
     text = "Accuracy = {} ".format(accuracy)
-    plt.text(80, 10,text,fontsize='x-large')
+    plt.text(150, 10,text,fontsize='x-large')
     plt.show()
     
     
@@ -76,3 +91,20 @@ def DecisionTree():
     text = "Accuracy = {} ".format(accuracy)
     plt.text(80, 10,text,fontsize='x-large')
     plt.show()
+    
+    
+def RandomForestRegressor():
+    X_train,X_test,y_train,y_test = GetData()
+    RandomForest = RFR(n_estimators=400, max_depth=15, n_jobs=6)
+    RandomForest.fit(X_train,y_train)
+    y_pred = RandomForest.predict(X_test)
+    
+    accuracy = round(RandomForest.score(X_test,y_test),3)
+    
+
+    plt.scatter(y_test,y_pred)
+    plt.title('Scatter For predicted Values')
+    text = "Accuracy = {} ".format(accuracy)
+    plt.text(80, 10,text,fontsize='x-large')
+    plt.show()
+    
