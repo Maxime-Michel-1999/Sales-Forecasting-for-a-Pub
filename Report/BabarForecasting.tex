@@ -264,16 +264,34 @@ Another important feature is the school year !
 
 \section{Comparing Models}
 
-The first results are disappointing with a very low r2 .
+In order to compare models we need to choose a metric. 
+
+\subsection{Choosing a Metric}
+
+There are the three possible metric that we consider : score ($R^2$) / Absolute Error / Squared Error.
+We think that the best metric to use is the mean squared error (RMSE), but in a concrete way the best one is actually the absolute error that is the most indicative as it shows the actual difference that the bar will encounter.
 
 
+\subsection{Choosing a model}
 
+
+Difference between shuffle and not shuffle is very notable ! So our model is missing something that considerate the year maybe ? We thought adding the promotion as a feature would be a solution but apparently that's not enough
 
 
 
 
 \section{Comparing the importance of features}
 
+In order to see the importance of features we are going to try different combination of them.
+
+\begin{itemize}
+\item Promotion : It seems to be a very important feature, when we take it out the results drops 
+\item Exams : It doesn't affect the results as much as promotion but it still taking them up, when dropping this feature we observe a small drop in the results
+\item Week Number : Very important, as promotion dropping it really worsen our results
+\item Week to holiday : Like exam
+\end{itemize}
+
+Ok it is maybe because we invented most of the exmas and week to holiday ! We need to find the real ones !
 
 \chapter{Development Ideas}
 
@@ -292,37 +310,6 @@ https://medium.com/analytics-vidhya/walmart-sales-forecasting-d6bd537e4904 : For
 
 
 
-
-
-
-\chapter{Python Code}
-
-\section{Data Manipulation}
-The data is stored in Données.\\
-
-\subsection{Sales DataFrame}
-
-This file gather the function necessary to create a data frame gathering all sales information for each week. There are (by order of apparition) the functions.
-
-\begin{itemize}
-\item textbf{ManageNullWeek} : It add rows of zeros for week with no sales.
-\item textbf{ProductSales} : This function takes the sale of a product dataframe in argument and gives an array with the usefull categories, ie for each product it gives a array of the form : $Year | Week number  | Number of sales$ (And the null row are filled by ManageNull Week).
-\item textbf{CreateSalesArray} : opens thee CSV files of the sales and made a dataFrame for each table. Then it collect the number of sales for each week by using the two previous functions. It returns a array containing the each array of each product.
-\item \textbf{CreateSalesData} : It take the precedent array in argument and creates an array for each year of the wanted form, ie for each week the sales of each product.
-\item \textbf{CreateSalesFrame} : This function is the gathering of all this file, it returns the previously described data frame by using all the functions.
-\end{itemize}
-
-\subsection{Holidays and Exams}
-
-According to us, one of the most important parameter is the holidays. We will consider the number of weeks (or days ?) to the next holiday (and after ?). The data is gathered in a csv file with for every week if there was a holiday (indicated by a 1) or if there wasn't (indicated by a 0). Our goal is to treat this data in order to have for each week the distance to the next holiday with the convention that the holiday week has a distance of 0.
-For the exam we are considering the option of pondering the distance to the next exam depending on the number of exams that occurs in a week. But how to do that ?
-
-\begin{itemize}
-\item openHandEData() : This function just opens the csv file and make it a Dataframe
-\item distanceToNextHoliday() : This function creates the counter for holidays and add it to the previously made dataframe
-\item distanceToNextExam() : This function creates a coefficient for each week for exams (as presented before, ponderated) and add it to the previously made dataframe.
-\item CreateHandE(): DataFrame with holiday and exams.
-\end{itemize}
 
 
 

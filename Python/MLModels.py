@@ -14,6 +14,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import model_selection as ms
 from sklearn.model_selection import cross_val_score as CV
 from sklearn.metrics import mean_squared_error as meanSquared
+from sklearn.metrics import mean_absolute_error as meanAbs
+
 
 from sklearn.neighbors import KNeighborsRegressor
 
@@ -36,7 +38,6 @@ def GetData():
     y = DM.CreateSalesFrame()
     
     
-    
     for i in y.index :
         
         
@@ -48,13 +49,14 @@ def GetData():
             
    
     y = y.drop(columns=['Year','Week Number'])
+
     
-    
+    X = X.drop(columns=['Week to Holiday'])
+
     
     #We create training and testing data that fit with sklearn package
 
-    X_train,X_test,y_train,y_test=ms.train_test_split( X, y, test_size=0.20, random_state=0)
-
+    X_train,X_test,y_train,y_test=ms.train_test_split( X, y, test_size=0.20, random_state = 0,shuffle=True)
 
     #Do we need this ?
     
@@ -62,6 +64,7 @@ def GetData():
     X_train = sc_X.fit_transform(X_train)
     X_test = sc_X.transform(X_test)
     
+
     return  X_train,X_test,y_train,y_test
 
     #Now We can try our models !
@@ -72,9 +75,9 @@ def KNN_Regressor(X_train,X_test,y_train,y_test):
     knn.fit(X_train,y_train)
     y_pred = knn.predict(X_test)
     
-    accuracy,crossScore,meanSquare = Scores(knn,X_test,y_test,y_pred)
+    accuracy,crossScore,meanSquare,meanAbsolute = Scores(knn,X_test,y_test,y_pred)
     
-    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare)
+    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute)
 
 
 
@@ -84,23 +87,22 @@ def DecisionTree(X_train,X_test,y_train,y_test):
     DecisionTree.fit(X_train,y_train)
     y_pred = DecisionTree.predict(X_test) 
     
-    accuracy,crossScore,meanSquare = Scores(DecisionTree,X_test,y_test,y_pred)
+    accuracy,crossScore,meanSquare,meanAbsolute = Scores(DecisionTree,X_test,y_test,y_pred)
     
-    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare)
+    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute)
 
 
       
 def RandomForestRegressor(X_train,X_test,y_train,y_test):
 
-    RandomForest = RFR(n_estimators=400, max_depth=15, n_jobs=6)
+    RandomForest = RFR(n_estimators=100)
     RandomForest.fit(X_train,y_train)
     y_pred = RandomForest.predict(X_test)
     
-    accuracy,crossScore,meanSquare = Scores(RandomForest,X_test,y_test,y_pred)
-    
-    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare)
+    accuracy,crossScore,meanSquare,meanAbsolute = Scores(RandomForest,X_test,y_test,y_pred)
+    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute)
 
-
+    return y_pred
 
 def NeuralNet(X_train,X_test,y_train,y_test):
  
@@ -108,10 +110,11 @@ def NeuralNet(X_train,X_test,y_train,y_test):
     Neural.fit(X_train, y_train)
     y_pred = Neural.predict(X_test)
     
-    accuracy,crossScore,meanSquare = Scores(Neural,X_test,y_test,y_pred)
+    accuracy,crossScore,meanSquare,meanAbsolute = Scores(Neural,X_test,y_test,y_pred)
     
-    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare)
-
+    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute)
+    
+    
 
 
 def ExtraTreeRegressor(X_train,X_test,y_train,y_test):
@@ -119,9 +122,9 @@ def ExtraTreeRegressor(X_train,X_test,y_train,y_test):
     etr.fit(X_train,y_train)
     y_pred=etr.predict(X_test)
     
-    accuracy,crossScore,meanSquare = Scores(etr,X_test,y_test,y_pred)
+    accuracy,crossScore,meanSquare,meanAbsolute = Scores(etr,X_test,y_test,y_pred)
     
-    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare)
+    DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute)
 
 
 
@@ -131,18 +134,22 @@ def Scores(model,X_test,y_test,y_pred):
     accuracy = round(model.score(X_test,y_test),3)
     crossScore = CV(model,X_test,y_test)
     meanSquare = meanSquared(y_test,y_pred)
+    meanAbsolute = meanAbs(y_test,y_pred)
     
-    return accuracy,crossScore,meanSquare
+    return accuracy,crossScore,meanSquare,meanAbsolute
     
     
-def DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare):
+def DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute):
     plt.scatter(y_test,y_pred)
-    plt.title('Scatter For predicted Values')
-    text = "Accuracy = {} ".format(accuracy)
-    plt.text(200, 10,text,fontsize='x-large')
+    plt.title('Predicted Values')
+    plt.xlabel("Real Values")
+    plt.ylabel("Predicted Values")
     plt.show()
+    
     print("CrossValidation scores : " , crossScore)
+    print("Accuracy (r^2) scores : " , accuracy)
     print("Mean Squared Error score : " , meanSquare)
+    print("Mean Absolute Error score : ", meanAbsolute)
     
     
 def TestModels():
@@ -156,6 +163,7 @@ def TestModels():
     
     print("\n Random Forest :")
     RandomForestRegressor(X_train,X_test,y_train,y_test)
+  
     
     print("\n Neural Network :")
     NeuralNet(X_train,X_test,y_train,y_test)
@@ -163,6 +171,27 @@ def TestModels():
     print("\n Extra Tree Regressor :")
     ExtraTreeRegressor(X_train,X_test,y_train,y_test)
 
-
+def concreteResults():
+    X_train,X_test,y_train,y_test = GetData()
+    y_pred = RandomForestRegressor(X_train,X_test,y_train,y_test)
     
+    j=0
+    for i in y_test.columns:
+        
+        Normal = y_test[i].values.tolist()
+        NormalPred = y_pred[:,j]
+        j += 1
+    
+        plt.plot(NormalPred, label = 'Prediction', color = "blue")
+        plt.plot(Normal, label = 'Real', color = "green")
+        plt.title(i)
+        plt.show()
+    
+    
+    
+    
+    
+    
+    
+#Let's try some basic methods usually used : 
     
