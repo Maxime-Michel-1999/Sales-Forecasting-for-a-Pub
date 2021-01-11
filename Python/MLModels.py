@@ -49,14 +49,15 @@ def GetData():
             
    
     y = y.drop(columns=['Year','Week Number'])
-
+    
+   
     
     X = X.drop(columns=['Week to Holiday'])
 
     
     #We create training and testing data that fit with sklearn package
 
-    X_train,X_test,y_train,y_test=ms.train_test_split( X, y, test_size=0.20, random_state = 0,shuffle=True)
+    X_train,X_test,y_train,y_test=ms.train_test_split( X, y, test_size=0.20, random_state = 0,shuffle=False)
 
     #Do we need this ?
     
@@ -106,14 +107,13 @@ def RandomForestRegressor(X_train,X_test,y_train,y_test):
 
 def NeuralNet(X_train,X_test,y_train,y_test):
  
-    Neural = MLPRegressor(random_state=1, max_iter=5000)
+    Neural = MLPRegressor(random_state=1, max_iter=3000)
     Neural.fit(X_train, y_train)
     y_pred = Neural.predict(X_test)
     
     accuracy,crossScore,meanSquare,meanAbsolute = Scores(Neural,X_test,y_test,y_pred)
     
     DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute)
-    
     
 
 
@@ -132,24 +132,28 @@ def ExtraTreeRegressor(X_train,X_test,y_train,y_test):
 def Scores(model,X_test,y_test,y_pred):
     
     accuracy = round(model.score(X_test,y_test),3)
-    crossScore = CV(model,X_test,y_test)
+    crossScore = CV(model,X_test,y_test,scoring="neg_mean_absolute_error")
     meanSquare = meanSquared(y_test,y_pred)
     meanAbsolute = meanAbs(y_test,y_pred)
-    
     return accuracy,crossScore,meanSquare,meanAbsolute
     
     
 def DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute):
+    
+    
+    
+    
+    
     plt.scatter(y_test,y_pred)
     plt.title('Predicted Values')
     plt.xlabel("Real Values")
     plt.ylabel("Predicted Values")
     plt.show()
     
-    print("CrossValidation scores : " , crossScore)
-    print("Accuracy (r^2) scores : " , accuracy)
-    print("Mean Squared Error score : " , meanSquare)
-    print("Mean Absolute Error score : ", meanAbsolute)
+    #print("CrossValidation scores : " , crossScore)
+    print("Accuracy : " , round(accuracy,2))
+    print("MSE : " , round(meanSquare,2))
+    print("MAE : ",round(meanAbsolute,2))
     
     
 def TestModels():
@@ -174,7 +178,6 @@ def TestModels():
 def concreteResults():
     X_train,X_test,y_train,y_test = GetData()
     y_pred = RandomForestRegressor(X_train,X_test,y_train,y_test)
-    
     j=0
     for i in y_test.columns:
         

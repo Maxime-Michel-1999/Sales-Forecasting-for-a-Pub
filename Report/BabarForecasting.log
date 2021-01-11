@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  5 JAN 2021 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.1)  9 JAN 2021 11:10
 entering extended mode
 **./BabarForecasting.tex
 (BabarForecasting.tex
@@ -336,14 +336,10 @@ Chapter 3.
 Chapter 4.
 [8
 
-]
+] [9]
 Chapter 5.
-[9
 
-]
-Chapter 6.
-
-Overfull \hbox (21.57526pt too wide) in paragraph at lines 307--308
+Overfull \hbox (21.57526pt too wide) in paragraph at lines 310--311
 \OT1/cmr/m/n/10 https://towardsdatascience.com/sales-forecasting-from-time-seri
 es-to-deep-learning-5d115514bfac : Fore-
  []
@@ -368,7 +364,7 @@ llation/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/maxim/Desktop/Latex
 Latex/Installation/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/maxim/Des
 ktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/maxi
 m/Desktop/Latex/Installation/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-Output written on BabarForecasting.pdf (11 pages, 128668 bytes).
+Output written on BabarForecasting.pdf (11 pages, 129560 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

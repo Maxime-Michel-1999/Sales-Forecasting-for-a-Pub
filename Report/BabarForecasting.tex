@@ -268,16 +268,21 @@ In order to compare models we need to choose a metric.
 
 \subsection{Choosing a Metric}
 
-There are the three possible metric that we consider : score ($R^2$) / Absolute Error / Squared Error.
-We think that the best metric to use is the mean squared error (RMSE), but in a concrete way the best one is actually the absolute error that is the most indicative as it shows the actual difference that the bar will encounter.
+
+There are the three possible metric that we consider : score ($R^2$) / Absolute Error (MAE) / Squared Error (MSE).
+We think that the best metric to use is the mean squared error (RMSE), but in a concrete way the best one is actually the absolute error that is the most indicative as it shows the actual difference that the bar will encounter. We are working with a bar so we think that the best way to evaluate the best one is to consider the MAE only.
 
 
 \subsection{Choosing a model}
 
 
-Difference between shuffle and not shuffle is very notable ! So our model is missing something that considerate the year maybe ? We thought adding the promotion as a feature would be a solution but apparently that's not enough
+Difference between shuffle and not shuffle is very notable ! So our model is missing something that considerate the year maybe ? We thought adding the promotion as a feature would be a solution but apparently that's not enough. THe results are not greate when not shuffling
 
 
+
+\subsection{Separating the y}
+
+We tried separating the type of beer so that each one has its own model but it doesn't improve the results (it worsen them actually)
 
 
 \section{Comparing the importance of features}
@@ -291,15 +296,13 @@ In order to see the importance of features we are going to try different combina
 \item Week to holiday : Like exam
 \end{itemize}
 
-Ok it is maybe because we invented most of the exmas and week to holiday ! We need to find the real ones !
-
-\chapter{Development Ideas}
-
-Adding a coefficient considering the promotion ! Every promotion doesn't drink the same, a coefficient should be schoolyear based.
+It seems that some other features would be needed, like the schedule of events ! Or the number of students of each year (we could have access to the number of clients ! and not only the sales).... IDEAS OF OTHER FEATURES 
 
 
+\section{Conclusion on the results}
 
-
+Seeing the graphs shows that the considerable irregularities in the sales of the establishment creates real difficulties when trying to forecast. Indeed our models are not able to forecast the drops or pics in sales that are due to some random particular event that takes place often in an university environment.
+However the random forest model still propose some notable results with a MAE of 28, with means that in average the model differs of 28 sales each week, which isn't that bad ! Knowing that those product have long expired dates then it isn't a real problem to have +-28 beers at the end of the week ! We could even see if it equalize over time ( maybe the week after it compensates). 
 
 
 \chapter{Inspirations}
