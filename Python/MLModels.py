@@ -9,6 +9,8 @@ import HolidaysManager as FM
 import DataManager as DM
 import numpy as np 
 import matplotlib.pyplot as plt
+import pandas as pd
+from tabulate import tabulate
 
 from sklearn.preprocessing import StandardScaler
 from sklearn import model_selection as ms
@@ -49,15 +51,12 @@ def GetData():
             
    
     y = y.drop(columns=['Year','Week Number'])
-    
-   
-    
-    X = X.drop(columns=['Week to Holiday'])
 
     
     #We create training and testing data that fit with sklearn package
 
     X_train,X_test,y_train,y_test=ms.train_test_split( X, y, test_size=0.20, random_state = 0,shuffle=False)
+
 
     #Do we need this ?
     
@@ -141,9 +140,7 @@ def Scores(model,X_test,y_test,y_pred):
 def DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute):
     
     
-    
-    
-    
+
     plt.scatter(y_test,y_pred)
     plt.title('Predicted Values')
     plt.xlabel("Real Values")
@@ -151,9 +148,9 @@ def DisplayResults(y_test,y_pred,accuracy,crossScore,meanSquare,meanAbsolute):
     plt.show()
     
     #print("CrossValidation scores : " , crossScore)
-    print("Accuracy : " , round(accuracy,2))
-    print("MSE : " , round(meanSquare,2))
-    print("MAE : ",round(meanAbsolute,2))
+    print("              Accuracy : " , round(accuracy,2))
+    print("               MSE : " , round(meanSquare,2))
+    print("               MAE : ",round(meanAbsolute,2))
     
     
 def TestModels():
@@ -179,14 +176,24 @@ def concreteResults():
     X_train,X_test,y_train,y_test = GetData()
     y_pred = RandomForestRegressor(X_train,X_test,y_train,y_test)
     j=0
+    
+    
+    df = pd.DataFrame(y_pred , columns =['Normal Beer', 'High Degree Beer','Not Beer','Special Beer']) 
+    print(tabulate(df, headers='keys', tablefmt='psql'))
+    
+    
+    
+
+
+    
     for i in y_test.columns:
         
         Normal = y_test[i].values.tolist()
         NormalPred = y_pred[:,j]
         j += 1
     
-        plt.plot(NormalPred, label = 'Prediction', color = "blue")
-        plt.plot(Normal, label = 'Real', color = "green")
+        plt.plot(NormalPred, label = 'Prediction', color = "red")
+        plt.plot(Normal, label = 'Data', color = "blue")
         plt.title(i)
         plt.show()
     
