@@ -1,4 +1,4 @@
-# BabarSalesForecast
+# Sales Forecasting for a bar
 
 Based on a study made on Walmart Company we worked on predicting the sales of a pub. Our goal was
 to first find the features that influenced the consumption of beers in the pub and then to be able to predict
